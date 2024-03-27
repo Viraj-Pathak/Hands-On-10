@@ -51,16 +51,16 @@ public:
 // Hash table class
 class HashTable {
 private:
-    int capacity; // Current capacity of the hash table
-    int size;     // Number of elements stored in the hash table
-    int threshold; // Capacity threshold for resizing
-    DoublyLinkedList* table; // Array of doubly linked lists
+    int capacity; 
+    int size;     
+    int threshold; 
+    DoublyLinkedList* table; 
 
     // Hash function using multiplication method
     int hash(int key) {
-        const double A = 0.6180339887; // Multiplicative constant (Golden ratio)
-        double frac = A * key - int(A * key); // Fractional part
-        return int(capacity * frac); // Multiplication by array size
+        const double A = 0.6180339887; 
+        double frac = A * key - int(A * key); 
+        return int(capacity * frac); 
     }
 
     // Function to resize the hash table
@@ -119,8 +119,6 @@ public:
         }
     }
 
-    // Function to retrieve the value associated with a key
-    // Returns -1 if key not found
     int get(int key) {
         int index = hash(key);
         Node* current = table[index].head;
